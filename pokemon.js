@@ -27,11 +27,17 @@ class Pokemon {
             return `Pokemon ${this.namen} kann nicht ${opponent.namen} angreifen, er hat zu wenig magie! `;
         }
     }
+    getMagic() {
+        console.log(
+            `Der Pokemon ${this.name} hat jetzt 350 mehr Gesundheists Punkte bekommen`
+        );
+        return (this.gesundheit += 350);
+    }
 }
 
-let pikachu = new Pokemon("Pikachu", 1200, 300, []);
+let pikachu = new Pokemon("Pikachu", 200, 300, []);
 console.log(pikachu);
-let zaidoor = new Pokemon("Zaidoor", 1500, 200, []);
+let zaidoor = new Pokemon("Zaidoor", 100, 200, []);
 console.log(zaidoor);
 
 class AttackSkill {
@@ -48,5 +54,9 @@ let kampfschrei = new AttackSkill("kampfschrei", 200, 10);
 console.log(kampfschrei);
 console.log(zaidoor.learnAttackSkill(kampfschrei));
 console.log(pikachu.showStatus());
+console.log(pikachu.attack(zaidoor));
+console.log(pikachu.attack(zaidoor));
+console.log(pikachu.getMagic());
+console.log(pikachu.attack(zaidoor));
 console.log(pikachu.attack(zaidoor));
 console.log(pikachu.attack(zaidoor));
